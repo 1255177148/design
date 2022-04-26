@@ -1,5 +1,6 @@
 package com.zhan.design;
 
+import com.zhan.design.util.advanced_observer.OtherObserved;
 import com.zhan.design.util.advanced_observer.WebObserved;
 import com.zhan.design.util.observer_patterns.Buyer;
 import com.zhan.design.util.observer_patterns.HandChopper;
@@ -24,6 +25,9 @@ public class ObserverTest {
     @Resource
     private WebObserved webObserved;
 
+    @Resource
+    private OtherObserved otherObserved;
+
     @Test
     public void test(){
         Shop shop = new Shop();
@@ -46,5 +50,6 @@ public class ObserverTest {
     @Test
     public void advancedTest() {
         webObserved.push("消息");
+        otherObserved.push("另一个事件的消息");
     }
 }
